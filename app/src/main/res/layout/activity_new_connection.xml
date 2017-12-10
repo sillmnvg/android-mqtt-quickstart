@@ -24,10 +24,10 @@ IBM Corp.
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dip"
-            android:text="@string/clientID" />
+            android:text="Name    " />
 
         <EditText
-            android:id="@+id/clientId"
+            android:id="@+id/nameId"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="0.22"
@@ -57,52 +57,6 @@ IBM Corp.
             android:ems="10"
             android:hint="@string/serverURIHint"
             android:inputType="text" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/portGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_below="@id/serverGroup" >
-
-        <TextView
-            android:id="@+id/portTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="35dip"
-            android:text="@string/port" />
-
-        <EditText
-            android:id="@+id/port"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.22"
-            android:ems="10"
-            android:hint="@string/portHint"
-            android:inputType="number" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/cleanSessionGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_below="@id/portGroup" >
-
-        <TextView
-            android:id="@+id/cleanSessionTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="35dip"
-            android:text="@string/cleanSession" />
-
-        <CheckBox
-            android:id="@+id/cleanSessionCheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/contentDescriptionCleanSession"
-            android:text="@string/empty" />
     </LinearLayout>
 
 </RelativeLayout>

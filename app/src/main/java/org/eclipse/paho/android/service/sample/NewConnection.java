@@ -19,6 +19,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.UUID;
 import org.eclipse.paho.android.service.sample.R;
 import android.app.Activity;
 import android.content.Intent;
@@ -131,10 +132,11 @@ public class NewConnection extends Activity {
             //extract client information
             String server = ((AutoCompleteTextView) findViewById(R.id.serverURI))
                 .getText().toString();
-            String port = ((EditText) findViewById(R.id.port))
+            String port = "1883"; //static for unencrypted MQTT traffic
+            String nameId = ((EditText) findViewById(R.id.nameId))
                 .getText().toString();
-            String clientId = ((EditText) findViewById(R.id.clientId))
-                .getText().toString();
+            String clientId = nameId + "_andriod_app_" + UUID.randomUUID().toString();
+
 
             if (server.equals(ActivityConstants.empty) || port.equals(ActivityConstants.empty) || clientId.equals(ActivityConstants.empty))
             {
@@ -143,13 +145,14 @@ public class NewConnection extends Activity {
               return false;
             }
 
-            boolean cleanSession = ((CheckBox) findViewById(R.id.cleanSessionCheckBox)).isChecked();
+            boolean cleanSession = true; //static true for an always squeaky clean session
             //persist server
             persistServerURI(server);
 
             //put data into a bundle to be passed back to ClientConnections
             dataBundle.putExtra(ActivityConstants.server, server);
             dataBundle.putExtra(ActivityConstants.port, port);
+            dataBundle.putExtra(ActivityConstants.nameId, nameId);
             dataBundle.putExtra(ActivityConstants.clientId, clientId);
             dataBundle.putExtra(ActivityConstants.action, ActivityConstants.connect);
             dataBundle.putExtra(ActivityConstants.cleanSession, cleanSession);

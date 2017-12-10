@@ -55,6 +55,8 @@ public class ActivityConstants {
   static final String server = "server";
   /** Port Bundle Key **/
   static final String port = "port";
+  /** NameID Bundle Key**/
+  static final String nameId = "nameId";
   /** ClientID Bundle Key **/
   static final String clientId = "clientId";
   /** Topic Bundle Key **/
